@@ -49,6 +49,7 @@ public class SimpleCalculator {
 		System.out.println("This is the remainer: " + remainder(firstNumber, secondNumber));
 		System.out.println("When " + firstNumber + " is raised to the power of " + secondNumber + ": "
 				+ exponent(firstNumber, secondNumber));
+		
 
 		input.close();
 	}
