@@ -1,50 +1,45 @@
 package chapter6;
 
+import java.util.*;
+
 public class Homework6_30 {
 
-	public static int craps(int dice1, int dice2) {
-		int sum;
-		int newSum = 0;
-		int newTemp = 0;
-		boolean game = true;
-		
-		while (game) {
-			newSum = dice1 + dice2;
-			System.out.println("You rolled " + dice1 + " + " + dice2 + " = " + newSum);
-		}
-		if ((sum == 2) || (sum == 3) || (sum ==12)) {
-			game = false;
-			System.out.println("You lose");
-		}
-		else
-		if ((sum == 7) || (sum == 11)) {
-			game = false;
-			System.out.println("You win");
-		}
-		else System.out.println("point is " + sum);
-		
-		if (newSum == newTemp) {
-			game = false;
-			System.out.println("You win");
-		}
-		else if (newSum == 7) {
-			game = false;
-			System.out.println("You lose");
-		}
-		else {
-			newTemp = newSum;
-			System.out.println("point" + newTemp);
-		}
+	public static int obtain_Dice() {
+		int dice1 = (int) (Math.random() * 6 + 1);
+		int dice2 = (int) (Math.random() * 6 + 1);
+
+		int dieRoll = dice1 + dice2;
+		System.out.println("You rolled: " + dice1 + " and " + dice2 + " = " + dieRoll);
+		return dieRoll;
 	}
 
 	public static void main(String[] args) {
 
-		int dice1, dice2;
-		
-		dice1 = (int) (Math.random() * 6 + 1);
-		dice2 = (int) (Math.random() * 6 + 1);
+		Scanner input = new Scanner(System.in);
+		input.close();
 
-		System.out.println(craps(dice1, dice2));
+		int diceRoll = 0;
+		int point = 0;
 
+		while (point < 2) {
+
+			diceRoll = obtain_Dice();
+
+			if (diceRoll == 7 || diceRoll == 11) {
+				System.out.println("You win from a roll of " + diceRoll);
+				break;
+			} else if (diceRoll == 2 || diceRoll == 3 || diceRoll == 12) {
+				System.out.println("You lose from a roll of " + diceRoll);
+				break;
+			} else {
+				System.out.println("point is: " + point);
+				point++;
+				if (point == 2)
+					System.out.println("You win from a roll of " + diceRoll);
+				else {
+					input.reset();
+				}
+			}
+		}
 	}
 }
