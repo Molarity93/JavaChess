@@ -110,7 +110,7 @@ public class Homework6_34_ {
 		int j = y / 100;
 		int k = y % 100;
 		int h = (q + 26 * (m + 1) / 10 + k + k / 4 + j / 4 + 5 * j) % 7;
-		String day = "";
+		
 
 		switch (h) {
 

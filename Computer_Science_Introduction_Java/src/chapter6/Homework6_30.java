@@ -43,3 +43,11 @@ public class Homework6_30 {
 		}
 	}
 }
+
+/*
+You rolled: 2 and 4 = 6
+point is: 0
+You rolled: 4 and 4 = 8
+point is: 1
+You win from a roll of 8
+*/
